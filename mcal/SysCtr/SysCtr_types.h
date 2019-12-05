@@ -12,4 +12,13 @@
 
 
 
+
+
+
+
+
+
+
+
+
 #endif /* TM4C123_FIRMWARE_MCAL_SYSCTR_SYSCTR_TYPES_H_ */

@@ -4,8 +4,8 @@
  *  Created on: Aug 20, 2019
  *      Author: Muhammad.Elzeiny
  */
-#include <tm4c123_firmware/mcal/PortDriver/port.h>
-#include <tm4c123_firmware/mcal/SysCtr/SysCtr.h>
+#include <Tiva_C_Drivers_Repo/tm4c123_firmware/mcal/PortDriver/port.h>
+#include <Tiva_C_Drivers_Repo/tm4c123_firmware/mcal/SysCtr/SysCtr.h>
 #include "../mcal/dio/dio.h"
 
 void lab_00_dio(void)

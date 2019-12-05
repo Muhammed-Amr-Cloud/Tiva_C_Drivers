@@ -15,7 +15,83 @@
  * NVIC REGISTERS                                            *
  *========================================================== */
 
-#define NVIC_REG    (*((volatile NVIC_TagType*)0xE000E100))
+typedef struct
+{
+    uint32 EN0;
+    uint32 EN1;
+    uint32 EN2;
+    uint32 EN3;
+    uint32 EN4;
+    /*TODO:reserved Locations*/
+    uint32 DIS0;
+    uint32 DIS1;
+    uint32 DIS2;
+    uint32 DIS3;
+    uint32 DIS4;
+    /*TODO: reserved Locations*/
+    uint32 PEND0;
+    uint32 PEND1;
+    uint32 PEND2;
+    uint32 PEND3;
+    uint32 PEND4;
+    //
+    uint32 UNPEND0;
+    uint32 UNPEND1;
+    uint32 UNPEND2;
+    uint32 UNPEND3;
+    uint32 UNPEND4;
+    //
+    uint32 ACTIVE0;
+    uint32 ACTIVE1;
+    uint32 ACTIVE2;
+    uint32 ACTIVE3;
+    uint32 ACTIVE4;
+    //
+    uint32 PRI0;
+    uint32 PRI1;
+    uint32 PRI2;
+    uint32 PRI3;
+    uint32 PRI4;
+    uint32 PRI5;
+    uint32 PRI6;
+    uint32 PRI7;
+    uint32 PRI8;
+    uint32 PRI9;
+    uint32 PRI10;
+    uint32 PRI11;
+    uint32 PRI12;
+    uint32 PRI13;
+    uint32 PRI14;
+    uint32 PRI15;
+    uint32 PRI16;
+    uint32 PRI17;
+    uint32 PRI18;
+    uint32 PRI19;
+    uint32 PRI20;
+    uint32 PRI21;
+    uint32 PRI22;
+    uint32 PRI23;
+    uint32 PRI24;
+    uint32 PRI25;
+    uint32 PRI26;
+    uint32 PRI27;
+    uint32 PRI28;
+    uint32 PRI29;
+    uint32 PRI30;
+    uint32 PRI31;
+    uint32 PRI32;
+    uint32 PRI33;
+    uint32 PRI34;
+    //
+    uint32 PRI31;
+    //..
+}NVIC_REG_Type;
+
+
+
+
+
+#define NVIC_REG    (((volatile NVIC_REG_Type*)0xE000E100))
 
 typedef struct
 {
@@ -145,6 +221,7 @@ typedef struct
     uint32 GPIOADCCTL  ;
     uint32 GPIODMACTL  ;
 }PORT_RegType;
+
 
 #define PORTA_BaseAddr     ((volatile PORT_RegType*)0x400043FC)
 #define PORTB_BaseAddr     ((volatile PORT_RegType*)0x400053FC)
@@ -901,6 +978,14 @@ typedef union
 #define I2CSACKCTL(I2C_BASE_ADDR)                 GET_REG(I2C_BASE_ADDR, uint32, I2CSACKCTL_OFFSET)
 #define I2CPP(I2C_BASE_ADDR)                       GET_REG(I2C_BASE_ADDR, uint32, I2CPP_OFFSET)
 #define I2CPC(I2C_BASE_ADDR)                       GET_REG(I2C_BASE_ADDR, uint32, I2CPC_OFFSET)
+
+
+
+
+//SCB
+
+#define SCB_APINT       (*(volatile uint32*)(0xE000ED0C))
+
 
 
 #endif /* E15_ARM_REPO_MCAL_PORT_DRIVER_PORT_HW_H_ */

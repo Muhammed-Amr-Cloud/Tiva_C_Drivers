@@ -177,7 +177,7 @@ typedef struct
 {
     Port_ChIdType           Channel;
     Port_DirType            Dir;
-    uint8                   Mode;
+    uint8                    Mode;
     Port_IntCtrType         Interrupt;
     Port_InternalAttachType AttachedRes;
     Port_CurrDriveType      CurrentDrive;
