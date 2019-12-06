@@ -109,7 +109,6 @@ typedef enum
     ONE_GROUP_EIGHT_SUB = 0x7
 }Interrupt_Periority_Select_t;
 
-
 typedef struct
 {
     /*TODO create types to contain Configuration parameters for each Interrupts
@@ -120,13 +119,13 @@ typedef struct
      * Sub-priority Group
      * */
 
-    NVIC_Interrupt_Id_t InterruptID ;
+    NVIC_Interrupt_Id_t              InterruptID        ;
 
-    NVIC_Interrupt_Control_t Interrupt_Control ;
+    NVIC_Interrupt_Control_t     Interrupt_Control      ;
 
-    Interrupt_Periority_Select_t Interrupt_Periorty ;
+    Interrupt_Periority_Select_t Interrupt_Periorty     ;
 
-
+    uint8                        Interrupt_Sub_Periority;
 
 
 
