@@ -152,26 +152,33 @@ uint8 Dio_ReadPort(Dio_PortType PortId )
     switch(PortId)
     {
 
-    case Dio_Port_A:
+        case Dio_Port_A:
 
-        ret = PORTA_BaseAddr->GPIODATA ;
-        break;
-    case Dio_Port_B:
-
-            ret = PORTA_BaseAddr->GPIODATB ;
+            ret = PORTA_BaseAddr->GPIODATA ;
             break;
-    case Dio_Port_C:
+        case Dio_Port_B:
 
-            ret = PORTA_BaseAddr->GPIODATC ;
-            break;
-    case Dio_Port_D:
+                ret = PORTB_BaseAddr->GPIODATA ;
+                break;
+        case Dio_Port_C:
 
-            ret = PORTA_BaseAddr->GPIODATD ;
-            break;
-    case Dio_Port_E:
+                ret = PORTC_BaseAddr->GPIODATA ;
+                break;
+        case Dio_Port_D:
 
-            ret = PORTA_BaseAddr->GPIODATE ;
-            break;
+                ret = PORTD_BaseAddr->GPIODATA ;
+                break;
+        case Dio_Port_E:
+
+                ret = PORTE_BaseAddr->GPIODATA ;
+                break;
+
+        case Dio_Port_F:
+
+                  ret = PORTF_BaseAddr->GPIODATA ;
+                    break;
+        default:
+                break;
     }
     return ret;
 }
@@ -187,30 +194,27 @@ void Dio_WritePort( Dio_PortType PortId, uint8 value)
             break;
         case Dio_Port_B:
 
-                ret = PORTA_BaseAddr->GPIODATB ;
+            PORTB_BaseAddr->GPIODATA =  value;
                 break;
         case Dio_Port_C:
 
-                ret = PORTA_BaseAddr->GPIODATC ;
+            PORTC_BaseAddr->GPIODATA =  value;
                 break;
         case Dio_Port_D:
 
-                ret = PORTA_BaseAddr->GPIODATD ;
+            PORTD_BaseAddr->GPIODATA =  value;
                 break;
         case Dio_Port_E:
 
-                ret = PORTA_BaseAddr->GPIODATE ;
+            PORTE_BaseAddr->GPIODATA =  value;
                 break;
+        case Dio_Port_F:
+
+            PORTF_BaseAddr->GPIODATA =  value;
+                break;
+
         }
-        return ret;
-
-
-
-
-
-
-    /*TODO: Write the input value in the corresponding PortId */
-
+           /*TODO: Write the input value in the corresponding PortId */
 }
 void Dio_FlipChannel( Dio_ChannelType ChannelId)
 {

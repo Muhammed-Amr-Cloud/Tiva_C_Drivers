@@ -122,22 +122,9 @@ void NVIC_init(void)
         }
 
 
-        SCB_APINT | = VECT_KEY ;
-
-        SCB_APINT | = NVIC_CfgArr[CfArr_Index].
-
-
-
-
-
-
-
-
+        SCB_APINT |=  VECT_KEY |((SCB_APINT & (0x00000700))| NVIC_CfgArr[CfArr_Index].Interrupt_Periorty );
 
     }
-
-
-
 
     /*TODO : return to non-privilege mode */
 

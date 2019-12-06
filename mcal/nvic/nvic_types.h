@@ -124,7 +124,7 @@ typedef struct
 
     NVIC_Interrupt_Control_t Interrupt_Control ;
 
-    Interrupt_Periority_Select_t Interrupt_Periorty ;x
+    Interrupt_Periority_Select_t Interrupt_Periorty ;
 
 
 

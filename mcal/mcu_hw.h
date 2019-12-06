@@ -83,7 +83,7 @@ typedef struct
     uint32 PRI33;
     uint32 PRI34;
     //
-    uint32 PRI31;
+    //uint32 PRI31;
     //..
 }NVIC_REG_Type;
 
