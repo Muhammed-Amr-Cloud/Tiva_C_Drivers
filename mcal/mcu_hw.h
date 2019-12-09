@@ -23,12 +23,14 @@ typedef struct
     uint32 EN3;
     uint32 EN4;
     /*TODO:reserved Locations*/
+
     uint32 DIS0;
     uint32 DIS1;
     uint32 DIS2;
     uint32 DIS3;
     uint32 DIS4;
     /*TODO: reserved Locations*/
+
     uint32 PEND0;
     uint32 PEND1;
     uint32 PEND2;

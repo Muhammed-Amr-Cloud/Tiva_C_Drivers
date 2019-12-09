@@ -123,6 +123,7 @@ void NVIC_init(void)
         }
 
 
+
         SCB_APINT |=  VECT_KEY |((SCB_APINT & (0x00000700))| (NVIC_CfgArr[CfArr_Index].Interrupt_Periorty<< SHIFT_BY_EIGHTD_FOR_INTERRUPT_PERIORITY));
 
 
@@ -136,7 +137,7 @@ void NVIC_init(void)
             case 1:
             case 2:
             case 3:
-                NVIC_REG->PRI0 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< (4*Periority_Counter + sub_Periority_Counter))  ; //(4*4+13) ->NICE
+                NVIC_REG->PRI0 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< ((4*Periority_Counter) + sub_Periority_Counter))  ; //(4*4+13) ->NICE
                 Periority_Counter++;
                 sub_Periority_Counter += 4 ;
 
@@ -150,7 +151,7 @@ void NVIC_init(void)
                 sub_Periority_Counter = 0  ;
                 Periority_Counter     = 0  ;
 
-                NVIC_REG->PRI1 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< (4*Periority_Counter + sub_Periority_Counter))  ;
+                NVIC_REG->PRI1 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< ((4*Periority_Counter) + sub_Periority_Counter))  ;
                 Periority_Counter++;
                 sub_Periority_Counter += 4 ;
                 Periority_Selection++;
@@ -163,7 +164,7 @@ void NVIC_init(void)
                 sub_Periority_Counter = 0  ;
                 Periority_Counter     = 0  ;
 
-                NVIC_REG->PRI2 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< (4*Periority_Counter + sub_Periority_Counter))  ;
+                NVIC_REG->PRI2 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< ((4*Periority_Counter) + sub_Periority_Counter))  ;
                 Periority_Counter++;
                 sub_Periority_Counter += 4 ;
                 Periority_Selection++;
@@ -176,7 +177,7 @@ void NVIC_init(void)
                 sub_Periority_Counter = 0  ;
                 Periority_Counter     = 0  ;
 
-                NVIC_REG->PRI3 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< (4*Periority_Counter + sub_Periority_Counter))  ;
+                NVIC_REG->PRI3 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< ((4*Periority_Counter) + sub_Periority_Counter))  ;
                 Periority_Counter++;
                 sub_Periority_Counter += 4 ;
                 Periority_Selection++;
@@ -188,7 +189,7 @@ void NVIC_init(void)
                 sub_Periority_Counter = 0  ;
                 Periority_Counter     = 0  ;
 
-                NVIC_REG->PRI4 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< (4*Periority_Counter + sub_Periority_Counter))  ;
+                NVIC_REG->PRI4 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< ((4*Periority_Counter) + sub_Periority_Counter))  ;
                 Periority_Counter++;
                 sub_Periority_Counter += 4 ;
                 Periority_Selection++;
@@ -201,7 +202,7 @@ void NVIC_init(void)
                  sub_Periority_Counter = 0  ;
                  Periority_Counter     = 0  ;
 
-                 NVIC_REG->PRI5 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< (4*Periority_Counter + sub_Periority_Counter))  ;
+                 NVIC_REG->PRI5 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< ((4*Periority_Counter) + sub_Periority_Counter))  ;
                  Periority_Counter++;
                  sub_Periority_Counter += 4 ;
                  Periority_Selection++;
@@ -214,7 +215,7 @@ void NVIC_init(void)
                  sub_Periority_Counter = 0  ;
                  Periority_Counter     = 0  ;
 
-                 NVIC_REG->PRI6 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< (4*Periority_Counter + sub_Periority_Counter))  ;
+                 NVIC_REG->PRI6 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< ((4*Periority_Counter) + sub_Periority_Counter))  ;
                  Periority_Counter++;
                  sub_Periority_Counter += 4 ;
                  Periority_Selection++;
@@ -227,7 +228,7 @@ void NVIC_init(void)
                  sub_Periority_Counter = 0  ;
                  Periority_Counter     = 0  ;
 
-                 NVIC_REG->PRI7 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< (4*Periority_Counter + sub_Periority_Counter))  ;
+                 NVIC_REG->PRI7 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< ((4*Periority_Counter) + sub_Periority_Counter))  ;
                  Periority_Counter++;
                  sub_Periority_Counter += 4 ;
                  Periority_Selection++;
@@ -240,7 +241,7 @@ void NVIC_init(void)
                  sub_Periority_Counter = 0  ;
                  Periority_Counter     = 0  ;
 
-                 NVIC_REG->PRI8 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< (4*Periority_Counter + sub_Periority_Counter))  ;
+                 NVIC_REG->PRI8 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< ((4*Periority_Counter) + sub_Periority_Counter))  ;
                  Periority_Counter++;
                  sub_Periority_Counter += 4 ;
                  Periority_Selection++;
@@ -253,7 +254,7 @@ void NVIC_init(void)
                  sub_Periority_Counter = 0  ;
                  Periority_Counter     = 0  ;
 
-                 NVIC_REG->PRI9 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< (4*Periority_Counter + sub_Periority_Counter))  ;
+                 NVIC_REG->PRI9 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< ((4*Periority_Counter) + sub_Periority_Counter))  ;
                  Periority_Counter++;
                  sub_Periority_Counter += 4 ;
                  Periority_Selection++;
@@ -266,7 +267,7 @@ void NVIC_init(void)
                  sub_Periority_Counter = 0  ;
                  Periority_Counter     = 0  ;
 
-                 NVIC_REG->PRI10 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< (4*Periority_Counter + sub_Periority_Counter))  ;
+                 NVIC_REG->PRI10 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< ((4*Periority_Counter) + sub_Periority_Counter))  ;
                  Periority_Counter++;
                  sub_Periority_Counter += 4 ;
                  Periority_Selection++;
@@ -279,7 +280,7 @@ void NVIC_init(void)
                  sub_Periority_Counter = 0  ;
                  Periority_Counter     = 0  ;
 
-                 NVIC_REG->PRI11 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< (4*Periority_Counter + sub_Periority_Counter))  ;
+                 NVIC_REG->PRI11 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< ((4*Periority_Counter) + sub_Periority_Counter))  ;
                  Periority_Counter++;
                  sub_Periority_Counter += 4 ;
                  Periority_Selection++;
@@ -292,7 +293,7 @@ void NVIC_init(void)
                  sub_Periority_Counter = 0  ;
                  Periority_Counter     = 0  ;
 
-                 NVIC_REG->PRI12 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< (4*Periority_Counter + sub_Periority_Counter))  ;
+                 NVIC_REG->PRI12 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< ((4*Periority_Counter) + sub_Periority_Counter))  ;
                  Periority_Counter++;
                  sub_Periority_Counter += 4 ;
                  Periority_Selection++;
@@ -305,7 +306,7 @@ void NVIC_init(void)
                  sub_Periority_Counter = 0  ;
                  Periority_Counter     = 0  ;
 
-                 NVIC_REG->PRI13 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< (4*Periority_Counter + sub_Periority_Counter))  ;
+                 NVIC_REG->PRI13 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< ((4*Periority_Counter) + sub_Periority_Counter))  ;
                  Periority_Counter++;
                  sub_Periority_Counter += 4 ;
                  Periority_Selection++;
@@ -317,7 +318,7 @@ void NVIC_init(void)
                  sub_Periority_Counter = 0  ;
                  Periority_Counter     = 0  ;
 
-                 NVIC_REG->PRI14 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< (4*Periority_Counter + sub_Periority_Counter))  ;
+                 NVIC_REG->PRI14 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< ((4*Periority_Counter) + sub_Periority_Counter))  ;
                  Periority_Counter++;
                  sub_Periority_Counter += 4 ;
                  Periority_Selection++;
@@ -330,7 +331,7 @@ void NVIC_init(void)
                  sub_Periority_Counter = 0  ;
                  Periority_Counter     = 0  ;
 
-                 NVIC_REG->PRI15 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< (4*Periority_Counter + sub_Periority_Counter))  ;
+                 NVIC_REG->PRI15 = ((NVIC_CfgArr[CfArr_Index].Interrupt_Sub_Periority & (0x07))<< ((4*Periority_Counter) + sub_Periority_Counter))  ;
                  Periority_Counter++;
                  sub_Periority_Counter += 4 ;
                  Periority_Selection++;
